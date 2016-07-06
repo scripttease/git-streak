@@ -26,5 +26,50 @@ function handleData(data) {
     };
   });
 
+  var allStreaksArray = [];
+  var streakObj;
+  var streakLength = 0;
+  var streaks = days.forEach(function(obj) {
+    if (obj.commits !== 0) {
+      streakObj =  {
+        streak: streakLength += 1,
+        date: obj.date,
+      };
+      allStreaksArray.push(streakObj);
+      var longestStreakAcc = 0;
+    } else {
+      streakLength = 0;
+    };
+  });
+
   console.log(days);
+  console.log(allStreaksArray);
+
+  var longestStreakObj;
+  var longestStreakAcc = 0;
+  var longestStreak = allStreaksArray.forEach(function(obj) {
+    if (obj.streak > longestStreakAcc) {
+      longestStreakObj = {
+        streakLength: obj.streak,
+        startDate: new Date((Date.parse(new Date(obj.date))) - ((obj.streak -1)*1000*60*60*24)),
+        endDate: new Date(obj.date),
+      };
+      longestStreakAcc = obj.streak;
+    };
+  });
+  console.log(longestStreakObj);
 }
+
+
+
+
+
+      // var longestStreakObj;
+      // var longestStreak = allStreaksArray.forEach(function(obj) {
+      //   if (obj.streak >= streakLength) 
+      //     longestStreakObj = {
+      //       streak: streakLength +1,
+      //       date: obj.date,
+      //     };
+    
+  // });
