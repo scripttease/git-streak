@@ -46,6 +46,8 @@ function handleData(data) {
     };
   });
   console.log(longestStreakObj);
+  // app.locals.lso = longestStreakObj;
+  document.getElementById("testP").innerHTML = longestStreakObj;
   console.log("Your longest streak was " + longestStreakObj.streakLength + " days! You were ON FIRE!");
   // Current streak
   var todayObj = days[days.length-1];

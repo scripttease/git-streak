@@ -1,6 +1,6 @@
 var http = require("http");
 var fetch = require("node-fetch");
-var handleData = require("./src/data-handling")
+var handleData = require("./src/data-handling");
 
 function getContributions() {
   var username = "scripttease";
@@ -11,4 +11,8 @@ function getContributions() {
 }
 
 getContributions();
-
+ 
+function formfunction(form) {
+  var usernameA = form.inputBox.value;
+window.location = "localhost:1234/" + usernameA;
+}
