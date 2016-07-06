@@ -45,18 +45,19 @@ function handleData(data) {
       longestStreakAcc = obj.streak;
     };
   });
-  console.log(longestStreakObj);
-  // app.locals.lso = longestStreakObj;
-  document.getElementById("testP").innerHTML = longestStreakObj;
-  console.log("Your longest streak was " + longestStreakObj.streakLength + " days! You were ON FIRE!");
-  // Current streak
-  var todayObj = days[days.length-1];
-  var today = new Date(todayObj.date);
-  if (today = new Date(allStreaksArray[allStreaksArray.length-1].date)) {
-    console.log("Your current streak is " + allStreaksArray[allStreaksArray.length-1].streak + " days. Groovy! Don't stop me now.. I'm having such a good time...");
-  } else {
-    console.log("You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!");
-  };
+  // console.log(longestStreakObj);
+  // // app.locals.lso = longestStreakObj;
+  // // document.getElementById("testP").innerHTML = longestStreakObj;
+  // console.log("Your longest streak was " + longestStreakObj.streakLength + " days! You were ON FIRE!");
+  // // Current streak
+  // var todayObj = days[days.length-1];
+  // var today = new Date(todayObj.date);
+  // if (today = new Date(allStreaksArray[allStreaksArray.length-1].date)) {
+  //   console.log("Your current streak is " + allStreaksArray[allStreaksArray.length-1].streak + " days. Groovy! Don't stop me now.. I'm having such a good time...");
+  // } else {
+  //   console.log("You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!");
+  // };
+  return longestStreakObj;
 }
 // export function
 module.exports = handleData;
