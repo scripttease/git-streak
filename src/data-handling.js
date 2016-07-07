@@ -49,15 +49,28 @@ function handleData(data) {
   // // app.locals.lso = longestStreakObj;
   // // document.getElementById("testP").innerHTML = longestStreakObj;
   // console.log("Your longest streak was " + longestStreakObj.streakLength + " days! You were ON FIRE!");
-  // // Current streak
-  // var todayObj = days[days.length-1];
-  // var today = new Date(todayObj.date);
-  // if (today = new Date(allStreaksArray[allStreaksArray.length-1].date)) {
-  //   console.log("Your current streak is " + allStreaksArray[allStreaksArray.length-1].streak + " days. Groovy! Don't stop me now.. I'm having such a good time...");
-  // } else {
-  //   console.log("You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!");
-  // };
-  return longestStreakObj;
+  // Current streak
+  var currentStreakObj;
+  var todayObj = days[days.length-1];
+  var today = new Date(todayObj.date);
+  if (today = new Date(allStreaksArray[allStreaksArray.length-1].date)) {
+    currentStreakObj = {
+      currentStreak: allStreaksArray[allStreaksArray.length-1].streak,
+      startDate: new Date((Date.parse(new Date(today))) - ((allStreaksArray[allStreaksArray.length-1].streak -1)*1000*60*60*24)),
+      endDate: new Date(today),
+    };
+    // console.log(currentStreakObj);
+    // console.log("Your current streak is " + allStreaksArray[allStreaksArray.length-1].streak + " days. Groovy! Don't stop me now.. I'm having such a good time...");
+  } else {
+    // console.log("You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!");
+  };
+  // return objects for use in routes nb only seems to return FIRST return objevt
+  // return longestStreakObj;
+  // return currentStreakObj;
+  return {
+    longestStreak: longestStreakObj,
+    currentStreak: currentStreakObj,
+  }
 }
 // export function
 module.exports = handleData;
