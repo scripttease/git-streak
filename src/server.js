@@ -37,6 +37,7 @@ app.get("/streak/:username", function(req, res) {
       var streakInfo = handleData(data);
       // var svg = response.text();
       // NOTE if include above line, page just hangs, this breaks everything even when you dont use it...
+      // res.send(streakInfo.svg); // renders correctly but in curly braces so as text/string not as actual svg.
       // res.json(streakInfo);
       res.render("streaks", streakInfo);
   });

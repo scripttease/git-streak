@@ -14,9 +14,10 @@
       <%= currentStreak.startDate %>
     </p>
     <p>
-    <%= JSON.stringify(svg) %>
+    <%- svg.svgRaw %>
     </p>
     <!-- <script src=index.js></script> -->
+    <script><%- svg.svgRaw %> </script>
   </body>
 </html>
 <!-- JSON.stringify(streakInfo)-->

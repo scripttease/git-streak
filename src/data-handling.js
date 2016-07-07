@@ -1,9 +1,11 @@
 function handleData(data) {
+  var rawSVG = data;
   var stringData = data.toString();
   // console.log(stringData); //this works
   var svgObj;
   var svgObj = {
     svg: stringData,
+    svgRaw: rawSVG,
   }
   // return stringData; // this doesnt work
   var lines = stringData.split("\n");
