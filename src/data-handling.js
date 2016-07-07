@@ -1,5 +1,11 @@
 function handleData(data) {
   var stringData = data.toString();
+  // console.log(stringData); //this works
+  var svgObj;
+  var svgObj = {
+    svg: stringData,
+  }
+  // return stringData; // this doesnt work
   var lines = stringData.split("\n");
   var pattern = /data-count="(\d+)".+data-date="(\d\d\d\d-\d\d-\d\d)"/;
   var days = lines.map(function(string) {
@@ -70,7 +76,10 @@ function handleData(data) {
   return {
     longestStreak: longestStreakObj,
     currentStreak: currentStreakObj,
+    svg: svgObj,
   }
+  // console.log(stringData);
+  // above doesnt work even when stringData is returned at the top :(
 }
 // export function
 module.exports = handleData;

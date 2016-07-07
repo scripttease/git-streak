@@ -30,11 +30,16 @@ app.get("/streak/:username", function(req, res) {
   // this uses the handledata fn but with an extra promise so that results are available to the route
     .then(function(response) {
       return response.text();
+      // console.log(response); //this doesnt work either
       //extra promise here
     }).then(function(data) {
+      // this variable calls handle data now
       var streakInfo = handleData(data);
-      res.json(streakInfo);
-    });
+      // var svg = response.text();
+      // NOTE if include above line, page just hangs, this breaks everything even when you dont use it...
+      // res.json(streakInfo);
+      res.render("streaks", streakInfo);
+  });
 });
 // app.post("/", function(req, res) {
 //   res.send("meep");
