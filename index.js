@@ -14,5 +14,6 @@ getContributions();
  
 function formfunction(form) {
   var usernameA = form.inputBox.value;
-window.location = "localhost:1234/" + usernameA;
+  console.log(usernameA);
+// window.location = "localhost:1234/" + usernameA;
 }

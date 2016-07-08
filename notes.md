@@ -55,3 +55,23 @@ ok so it all works fine ish BUT the main problem now is that inserting the svg i
 I need to have a client-side.js file that somehow inserts the svg into the dom maybe? Need to ask louis about this. Because of course, I can't actually access the streakInfo data outside of wherever i call the function....
 
 HOWEVER it is worth noting that when I use res.json(streakInfo) which is basically res.send, the svg is NOT escaped - can i somehow use that???
+
+nope - you can escape it - yay! And i can put it in script tags too or just render it straight in the body.
+
+NOTE
+ask louis why something has to be a javascript object literal to be returned???
+
+
+NEXT
+need to get the username from the form
+
+
+Can i do something like
+into the index view in the script tag:
+say 
+get window.location.hash
+or
+just put form handling logic in the script tag
+Then send user to that url... use url encode etc.
+
+louis says use input and onchange not form and onclick.

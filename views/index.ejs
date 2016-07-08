@@ -10,11 +10,18 @@
     <h1>Helllllloooooooooooooo <%= me %></h1>
     <p>So... you miss the git streak, huh? That side of you that feels it can only be adequately expressed through statistics (and if you are a programmer, that's probably a BIG side) wants to know, exactly how productive, in <span>actual numbers</span> you've been recently... </p>
     <p>And of course, how much <span>more</span> productive that is than Jake over on the web team. In, you know, actual numbers. Because that's meaningful. And, you know, also very useful from a productivity point of view as well, because you are in no way in some kind of personal competition-bordering-on-vendetta with Jake. At all.</p>
-    <p id = testP ></p>
-    <form name="inputForm" action="/" method="GET">
-                    <input type="text" name="inputBox" value=""/>
-                    <input type="submit" onClick="formFunct(this.form)"/>
     </form>
-    <!-- <script src=index.js></script> -->
+    <div>
+      <label>Your sexy Github username
+      <input type="text" onchange="userContributions(event);">
+      </input>
+      </label>
+    </div>
+    <script>
+function userContributions(event) {
+  var url = window.location + "streak/" + event.target.value;
+  window.open(url);
+}
+    </script>
   </body>
 </html>
