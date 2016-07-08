@@ -75,3 +75,55 @@ just put form handling logic in the script tag
 Then send user to that url... use url encode etc.
 
 louis says use input and onchange not form and onclick.
+
+sad path ie if username not found
+(and maybe - are you sure you entered it like this...)
+
+if response isn't 200 throw an exception in the first bit of the promise, then use a promise .catch to render another view to the user
+
+strip script tags but only those in ejs
+
+use mocha and chai for testing
+
+clean up code
+remove notes ie put in gitignore again
+
+
+make scrolling parallax over svg with got streak.
+
+Louis:(on making an api)
+So I suggest you refractor out all the logic in your route so you have a new method called lookupStreak or something that does the fetch and then the parsing and then returns a promise
+
+Then in your route you just say lookupStreak(username).then(streakInfo => res.render("my-view", streakInfo).catch(err => res.render("not-found-view", { error: err })
+)
+Then make a second route
+
+/api/streak/: username or something
+
+Same logic, just wrapped up differently
+Because we want to reuse it in the other view
+Other route sorry
+
+LOUIS:
+Things to think about:
+Have you covered the sad path as well as the happy path? I.e. what happens if the user types in a name that isn't registered on github?
+Can we strip script tags from that svg? I know there are none, but it's needed for security.
+Does the code look clean? Indented, no commented out bits, etc?
+What can we test?
+Does the readme have good info?
+Deploy the app!
+cool. i dunno what you mean about the svg. If I strip the tags it wont render...
+I will do the rest (like the sad path - good name ☺ )
+Louis Pop (louispopinjay@gmail.com)
+We can find a way to only strip script tags :)
+OH I see - yeah ok, cool
+Louis Pop (louispopinjay@gmail.com)
+I imagine that if the account isn't found you won't get a 200 status code of the fetch request
+Good place to start
+If response isn't 200 throw an exception in the first bit of the promise, then use a promise .catch to render another view to the user
+
+
+NB
+Do github language bar hr app
+
+

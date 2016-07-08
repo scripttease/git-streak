@@ -1,13 +1,11 @@
 function handleData(data) {
   var rawSVG = data;
   var stringData = data.toString();
-  // console.log(stringData); //this works
   var svgObj;
   var svgObj = {
     svg: stringData,
     svgRaw: rawSVG,
   }
-  // return stringData; // this doesnt work
   var lines = stringData.split("\n");
   var pattern = /data-count="(\d+)".+data-date="(\d\d\d\d-\d\d-\d\d)"/;
   var days = lines.map(function(string) {
@@ -20,7 +18,6 @@ function handleData(data) {
       date: array[2],
     };
   });
-  // Array of objects where streak is the number of days in a row that have had non-zero commits and date is the date of the LAST date in the streak (of non-zero commits)
   var allStreaksArray = [];
   var streakObj;
   var streakLength = 0;
@@ -36,11 +33,6 @@ function handleData(data) {
       streakLength = 0;
     };
   });
-  // console.log(days);
-  // console.log(allStreaksArray);
-  // ASK LOUIS how do I put these into an API for people?
-  //
-  // Prints an object that contains the *most recent* longest streak.
   var longestStreakObj;
   var longestStreakAcc = 0;
   var longestStreak = allStreaksArray.forEach(function(obj) {
@@ -53,9 +45,6 @@ function handleData(data) {
       longestStreakAcc = obj.streak;
     };
   });
-  // console.log(longestStreakObj);
-  // // app.locals.lso = longestStreakObj;
-  // // document.getElementById("testP").innerHTML = longestStreakObj;
   // console.log("Your longest streak was " + longestStreakObj.streakLength + " days! You were ON FIRE!");
   // Current streak
   var currentStreakObj;
@@ -67,12 +56,10 @@ function handleData(data) {
       startDate: new Date((Date.parse(new Date(today))) - ((allStreaksArray[allStreaksArray.length-1].streak -1)*1000*60*60*24)),
       endDate: new Date(today),
     };
-    // console.log(currentStreakObj);
     // console.log("Your current streak is " + allStreaksArray[allStreaksArray.length-1].streak + " days. Groovy! Don't stop me now.. I'm having such a good time...");
   } else {
     // console.log("You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!");
   };
-  // return objects for use in routes nb only seems to return FIRST return objevt
   // return longestStreakObj;
   // return currentStreakObj;
   return {
@@ -80,8 +67,6 @@ function handleData(data) {
     currentStreak: currentStreakObj,
     svg: svgObj,
   }
-  // console.log(stringData);
-  // above doesnt work even when stringData is returned at the top :(
 }
 // export function
 module.exports = handleData;
