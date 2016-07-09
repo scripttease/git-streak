@@ -1,0 +1,25 @@
+body {
+font-family: "Josefin Sans", sans-serif;
+line-height: 1.4;
+background-color: rgba(214, 230, 133, 0.33);
+font-size: large;
+}
+
+span {
+  font-weight: bold;
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  color: darkgreen;
+  text-align: center;
+}
+
+.svg-container {
+  width: 80%;
+  margin: auto;
+}

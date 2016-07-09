@@ -122,6 +122,12 @@ I imagine that if the account isn't found you won't get a 200 status code of the
 Good place to start
 If response isn't 200 throw an exception in the first bit of the promise, then use a promise .catch to render another view to the user
 
+CANT DO
+errors
+load layout for streaks page
+
+npm run dev to run nodemon server
+
 
 NB
 Do github language bar hr app

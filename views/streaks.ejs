@@ -3,22 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>squeak</title>
+    <link rel="stylesheet" href="/layout.css">
+    <title>Streak</title>
   </head>
   <body>
-    <h1>mew</h1>
+    <div class="svg-container">
+    <div class="svg">
+    <%- svg.svgRaw %>
+    </div>
+    </div>
     <p>
       <%= longestStreak.streakLength %>
     </p>
     <p>
       <%= currentStreak.startDate %>
     </p>
-    <p>
-    <%- svg.svgRaw %>
-    </p>
-    <!-- <script src=index.js></script> -->
-    <script><%- svg.svgRaw %> </script>
+    <script>
+document.getElementsByTagName("svg")[0].removeAttribute("width");
+document.getElementsByTagName("svg")[0].removeAttribute("height");
+document.getElementsByTagName("svg")[0].setAttribute("viewBox", "0 0 721 110");
+    </script>
   </body>
 </html>
-<!-- JSON.stringify(streakInfo)-->
-    <!-- < and % and = JSON.stringify(streakInfo) %and> LOUIS THIS DOESNT WORK MEW also, interestingly - EVEN when commeted out it breaks EVERYTHING saying streakInfo not defines and the whole app breaks SO I have had to change the < and % and = tags-->
