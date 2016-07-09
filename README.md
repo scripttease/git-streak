@@ -1,6 +1,6 @@
 #Git Streak
 
-https://git-streak.scripttease.uk
+http://git-streak.scripttease.uk
 
 Bringing back the github streak!
 
