@@ -135,6 +135,12 @@ to do
 
 make partials called header and footer
 
+say (on streaks view) this info is available as json here in the API and give link - WOOOP
+
+deploy in heroku
+
+heroku will give me ports to bind to as environment variables.
+It expects a particular port 
 
 
 NB
