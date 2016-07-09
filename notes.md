@@ -129,6 +129,14 @@ load layout for streaks page
 npm run dev to run nodemon server
 
 
+to do
+404 page for random routes
+404 for github username not found giving another try and being like its just THIS part of the url you dummy...
+
+make partials called header and footer
+
+
+
 NB
 Do github language bar hr app
 

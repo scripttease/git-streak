@@ -42,4 +42,21 @@ app.get("/streak/:username", function(req, res) {
     });
       // note a render function cannot take a function or callback, only (as second arg) an object
 });
+
+app.get("/api/streak/:username", function(req, res) {
+  var username = req.params.username;
+  getUserInfo(username)
+    .then(function(streakInfo) {
+      res.setHeader('Content-Type', 'application/json');
+      streakInfo.username = username;
+      res.json(streakInfo);
+    })
+    .catch(function(error) {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(404).json({
+        error: "User not found"
+      });
+    });
+      // note a render function cannot take a function or callback, only (as second arg) an object
+});
 module.exports = app;
