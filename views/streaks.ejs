@@ -19,9 +19,9 @@
      days! You were ON FIRE!
     </p>
     <p>
-    <% if (parseInt(currentStreak.currentStreak) > 0) { %>
+    <% if (currentStreak) { %>
     Your current streak is 
-    <%= currentStreak.currentStreak; %>
+    <%= currentStreak.streakLength; %>
     <% } else { %>
     You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!
     <% }; %>

@@ -1,4 +1,4 @@
-function handleData(data) {
+function extractStreakData(data) {
   var rawSVG = data;
   var stringData = data.toString();
   var svgObj;
@@ -45,23 +45,18 @@ function handleData(data) {
       longestStreakAcc = obj.streak;
     };
   });
-  // console.log("Your longest streak was " + longestStreakObj.streakLength + " days! You were ON FIRE!");
-  // Current streak
+
   var currentStreakObj;
   var todayObj = days[days.length-1];
   var today = new Date(todayObj.date);
-  if (today = new Date(allStreaksArray[allStreaksArray.length-1].date)) {
+  if (todayObj.date === allStreaksArray[allStreaksArray.length-1].date) {
     currentStreakObj = {
-      currentStreak: allStreaksArray[allStreaksArray.length-1].streak,
+      streakLength: allStreaksArray[allStreaksArray.length-1].streak,
       startDate: new Date((Date.parse(new Date(today))) - ((allStreaksArray[allStreaksArray.length-1].streak -1)*1000*60*60*24)),
       endDate: new Date(today),
     };
-    // console.log("Your current streak is " + allStreaksArray[allStreaksArray.length-1].streak + " days. Groovy! Don't stop me now.. I'm having such a good time...");
   } else {
-    // console.log("You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!");
   };
-  // return longestStreakObj;
-  // return currentStreakObj;
   return {
     longestStreak: longestStreakObj,
     currentStreak: currentStreakObj,
@@ -69,4 +64,4 @@ function handleData(data) {
   }
 }
 // export function
-module.exports = handleData;
+module.exports = extractStreakData;

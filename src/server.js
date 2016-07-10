@@ -1,7 +1,7 @@
 var morgan = require("morgan");
 var helmet = require("helmet");
 var fetch = require("node-fetch");
-var handleData = require("./data-handling");
+var extractStreakData = require("./data-handling");
 var express = require("express");
 var app = express();
 
@@ -28,7 +28,7 @@ function getUserInfo(username) {
       return response.text();
     })
     .then(function(data) {
-      var streakInfo = handleData(data);
+      var streakInfo = extractStreakData(data);
       return streakInfo;
     });
 }
