@@ -19,9 +19,12 @@
      days! You were ON FIRE!
     </p>
     <p>
+    <% if (parseInt(currentStreak.currentStreak) > 0) { %>
     Your current streak is 
-      <%= currentStreak.currentStreak %>
-      days! Groovy! Don't stop me now... I'm havin' such a good time...
+    <%= currentStreak.currentStreak; %>
+    <% } else { %>
+    You don't have any commits today, so your current streak is zero! Quick, hit up that Ship-It Squirrel!
+    <% }; %>
     </p>
     </div>
     <script>

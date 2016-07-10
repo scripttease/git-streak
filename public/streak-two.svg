@@ -1,7 +1,7 @@
 <svg version="1.1"
      baseProfile="full"
      xmlns="http://www.w3.org/2000/svg"
-     id="svg-streak" viewBox="0 0 701 84" class="js-calendar-graph-svg"> 
+     id="svg-streak" viewBox="0 0 701 91" class="js-calendar-graph-svg"> 
 <g transform="translate(0, 0)"> 
 <g transform="translate(0, 0)"> 
 <rect class="day" width="11" height="11" y="0" fill="#8cc665" /> 
