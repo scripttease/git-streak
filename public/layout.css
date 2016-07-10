@@ -3,9 +3,6 @@
   padding: 0;
 }
 
-.svg-background {
-}
-
 body {
   font-family: "Josefin Sans", sans-serif;
   color: darkgreen;
@@ -17,7 +14,7 @@ body {
   display: block;
 }
 
-p, form, label {
+p, form, label, h1 {
   margin: 18px;
 }
 span {
@@ -43,6 +40,6 @@ h1 {
 }
 
 .svg-container {
-  width: 80%;
+  width: 85%;
   margin: auto;
 }

@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,600,600italic' rel='stylesheet' type='text/css'><meta charset="utf-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/layout.css">
-    <title>Streak</title>
+    <title>Your Streak</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Why, You're Streak <span>Lightening</span>!</h1>
     <div class="svg-container">
-    <div class="svg">
     <%- svg.svgRaw %>
     </div>
-    </div>
     <p>
+    Your longest streak was 
       <%= longestStreak.streakLength %>
+     days! You were ON FIRE!
     </p>
     <p>
-      <%= currentStreak.startDate %>
+    Your current streak is 
+      <%= currentStreak.currentStreak %>
+      days! Groovy! Don't stop me now... I'm havin' such a good time...
     </p>
+    </div>
     <script>
 document.getElementsByTagName("svg")[0].removeAttribute("width");
 document.getElementsByTagName("svg")[0].removeAttribute("height");
