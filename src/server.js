@@ -1,3 +1,4 @@
+var morgan = require("morgan");
 var helmet = require("helmet");
 var fetch = require("node-fetch");
 var handleData = require("./data-handling");
@@ -7,6 +8,7 @@ var app = express();
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(helmet());
+app.use(morgan("dev"));
 
 app.get("/", function(req, res) {
   res.render("index");
