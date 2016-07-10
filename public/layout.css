@@ -1,21 +1,44 @@
-body {
-font-family: "Josefin Sans", sans-serif;
-line-height: 1.4;
-background-color: rgba(214, 230, 133, 0.33);
-font-size: large;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+.svg-background {
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: darkgreen;
+  line-height: 1.4;
+  font-size: large;
+  background: url(streak-two.svg);
+  background-repeat: repeat;
+  width: 100%;
+  display: block;
+}
+
+p, form, label {
+  margin: 18px;
+}
 span {
   font-weight: bold;
 }
 
+input {
+  background-color: rgba(238, 238, 238, 0.92);
+  border-color: darkgreen;
+
+}
 .container{
-  width: 80%;
-  margin: auto;
+  width: 75%;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(238, 238, 238, 0.92);
+  padding: 10px;
 }
 
 h1 {
-  color: darkgreen;
   text-align: center;
 }
 

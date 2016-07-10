@@ -147,4 +147,14 @@ NB
 Do github language bar hr app
 
 
+deployment
 
+install heroku toolbelt
+```
+heroku
+heroku apps:create git-streak
+git remote -v //checks if git remote exists
+git push heroku master
+```
+now deployed on heroku
+AND can use gui on heroku to change domain (in settings). Then need to go to cloudflare and go to DNS tab and then chose cname and use git-streak as name and git-streak.herokuapp.com as value (TTL automatic) and that will reroute/change domain to git-streak.scripttease.uk
