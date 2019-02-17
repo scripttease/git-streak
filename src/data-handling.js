@@ -1,5 +1,10 @@
 function extractStreakData(data) {
-  var rawSVG = data;
+  // fix bug now that api changed
+  const regex = /(\<svg width\=\".*?\<\/g><\/svg\>)/gs;
+  const svg = regex.exec(data)
+  const rawSVG = svg[1]
+  // var rawSVG = data;
+  //
   var stringData = data.toString();
   var svgObj;
   var svgObj = {
